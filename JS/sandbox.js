@@ -1,10 +1,5 @@
 var main=function() {
 
-
-
-
-
-
 	var CANVAS=document.getElementById("webgl_canvas");
 	var SHADERSTATUS = document.getElementById("shaderstatus");
 	var SHADERSTATUSTEXT = document.getElementById("shaderstatustext");
@@ -90,14 +85,7 @@ var main=function() {
 	var _Mmatrix;
 	var _color;
 
-	var jsonOBJ;
 
-
-	$.getJSON('frags.json', function (data) {
-		jsonOBJ = jQuery.parseJSON( data );
-		alert( "test" );
-		shader_fragment_textarea.value = jsonOBJ[0].source;
-	});
 
 	var refresh_Shaders=function() {
 		var shader_fragment = GL.createShader(GL.FRAGMENT_SHADER);
@@ -132,7 +120,7 @@ var main=function() {
 			GL.enableVertexAttribArray(_time);
 			GL.enableVertexAttribArray(_resolution);
 			GL.enableVertexAttribArray(_position);
-			//GL.enableVertexAttribArray(_color);
+			GL.enableVertexAttribArray(_color);
 			GL.useProgram(SHADER_PROGRAM);
 		}
 		else if(!GL.getShaderParameter(shader_fragment, GL.COMPILE_STATUS))
