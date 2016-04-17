@@ -98,7 +98,8 @@ var main=function() {
         }
         .error(function(xhr) {
             alert(xhr)
-        });
+        })
+	);
 
 	var refresh_Shaders=function() {
 		var shader_fragment = GL.createShader(GL.FRAGMENT_SHADER);
