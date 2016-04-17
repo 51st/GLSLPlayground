@@ -6,6 +6,11 @@ var main=function() {
 	var FULLSCREENBUTTON = document.getElementById("fullscreenbutton");
 	var HIDECODEBUTTON = document.getElementById("hidecode");
 	var CODEAREA = document.getElementById("codeAreaWrapper");
+	var JSONDATA = [];
+
+	$.getJSON( "frags.js", function( json ) {
+		console.log( "JSON Data: " + json.frags[ 0 ].source );
+	});
 
 	FULLSCREENBUTTON.addEventListener( 'click', 
 										function ( event ) {
