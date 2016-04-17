@@ -45,7 +45,7 @@ var main=function() {
 	var mousePosition=[0,0];
 	document.addEventListener('mousemove', function(event) {
 		mousePosition[0]=event.clientX/CANVAS.width;
-		mousePosition[1]=event.clientY/CANVAS.height;
+		mousePosition[1]=-1*(event.clientY/CANVAS.height);
 	}, false);
 
 
