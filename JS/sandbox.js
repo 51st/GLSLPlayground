@@ -1,5 +1,15 @@
 var main=function() {
 
+	var jsonOBJ;
+
+	$.getJSON('frags.json', function (data) {
+		console.log(data);
+		jsonOBJ = jQuery.parseJSON( data );
+	});
+
+
+
+
 	var CANVAS=document.getElementById("webgl_canvas");
 	var SHADERSTATUS = document.getElementById("shaderstatus");
 	var SHADERSTATUSTEXT = document.getElementById("shaderstatustext");
