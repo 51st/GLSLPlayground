@@ -92,9 +92,11 @@ var main=function() {
 
 	var jsonOBJ;
 
+
 	$.getJSON('frags.json', function (data) {
 		jsonOBJ = jQuery.parseJSON( data );
-		shader_fragment_textarea.value = "";
+		alert( jsonOBJ[0].source );
+		shader_fragment_textarea.value = jsonOBJ[0].source;
 	});
 
 	var refresh_Shaders=function() {
