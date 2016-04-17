@@ -90,16 +90,7 @@ var main=function() {
 	var _Mmatrix;
 	var _color;
 
-	var jsonOBJ;
 
-
-    $.getJSON("frags.json", function(data) {
-            alert(data);
-        }
-        .error(function(xhr) {
-            alert(xhr)
-        })
-	);
 
 	var refresh_Shaders=function() {
 		var shader_fragment = GL.createShader(GL.FRAGMENT_SHADER);
