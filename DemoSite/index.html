@@ -10,22 +10,31 @@
 <link rel="stylesheet" href="CSS/custom.css"/>
 <link rel="stylesheet" href="CSS/navigation.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="JS/json_utils.js"></script>
 </head> 
 
-<body style='margin:0px' onload='main(); init();'>
+<body style='margin:0px' onload='main(); init(); '>
 	
 
 
 
 	
 <div id="subheader">
+
+
+
+
+
+
+
 	<input id="fullscreenbutton" type="submit" value="FullScreen">
 	<input id="hidecode" type="submit" value="Hide Code">
 </div>
 <!-- Web GL Canvas -->
 <div class="canvas">
 	<!-- Header -->
-	<div id="header">	
+	<div id="header">
+
 		<div id="mainNav">
 			<ul>
 			  <li><a href="">Back</a></li>
@@ -67,7 +76,7 @@
 		</div>
 		<div class ="tabContent" id="fragmentCode">
 			<textarea id='fragmentSourceTextarea'>
-				//<!--
+
 				/*
 						   co3moz
 					 github.com/co3moz
@@ -117,7 +126,7 @@
 					if(distance(p.x, c.x) < 0.005 && sin((c.y - p.y) * 200.0) < 0.1) color = vec3(1.0, 0.0, 1.0); // vertical
 					gl_FragColor = vec4(color, 1.0);
 				}
-				//-->
+
 			</textarea>
 		</div>
 	</div>
@@ -130,6 +139,9 @@
 <script type="text/javascript" src="ExternalLibs/glsl.js"></script>
 <script type="text/javascript" src="ExternalLibs/libs.js"></script>
 <script type="text/javascript" src="JS/codemirror_tabs.js"></script>
+<script type="text/javascript" src="JS/frags.js"></script>
 <script type="text/javascript" src="JS/sandbox.js"></script>
+
+
 
 </html>

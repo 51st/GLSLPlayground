@@ -1,16 +1,17 @@
 var main=function() {
 
+
+
+
 	var CANVAS=document.getElementById("webgl_canvas");
 	var SHADERSTATUS = document.getElementById("shaderstatus");
 	var SHADERSTATUSTEXT = document.getElementById("shaderstatustext");
 	var FULLSCREENBUTTON = document.getElementById("fullscreenbutton");
 	var HIDECODEBUTTON = document.getElementById("hidecode");
 	var CODEAREA = document.getElementById("codeAreaWrapper");
-	var JSONDATA = [];
 
-	$.getJSON( "frags.js", function( json ) {
-		console.log( "JSON Data: " + json.frags[ 0 ].source );
-	});
+
+
 
 	FULLSCREENBUTTON.addEventListener( 'click', 
 										function ( event ) {
@@ -49,8 +50,8 @@ var main=function() {
 
 	var mousePosition=[0,0];
 	document.addEventListener('mousemove', function(event) {
-		mousePosition[0]=event.clientX/CANVAS.width;
-		mousePosition[1]=-1*(event.clientY/CANVAS.height);
+		mousePosition[0]= event.clientX/CANVAS.width;
+		mousePosition[1]= event.clientY/CANVAS.height;
 	}, false);
 
 
@@ -58,10 +59,10 @@ var main=function() {
 	/*========================= GET WEBGL CONTEXT ========================= */
 	var GL;
 	try {
-	GL = CANVAS.getContext("experimental-webgl", {antialias: false});
+		GL = CANVAS.getContext("experimental-webgl", {antialias: false});
 	} catch (e) {
-	alert("You are not webgl compatible :(") ;
-	return false;
+		alert("You are not webgl compatible :(") ;
+		return false;
 	}
 
 	/*========================= SHADERS ========================= */
@@ -90,9 +91,14 @@ var main=function() {
 	var _Mmatrix;
 	var _color;
 
-
+	var getShader = function() {
+		var rand = Math.floor((Math.random() * FRAGS.length));
+		var source = FRAGS[rand];
+		shader_fragment_textarea.value = source;
+	};
 
 	var refresh_Shaders=function() {
+		getShader();
 		var shader_fragment = GL.createShader(GL.FRAGMENT_SHADER);
 		var shader_vertex = GL.createShader(GL.VERTEX_SHADER);
 		GL.shaderSource(shader_vertex, (CODEVIEW1)?CODEVIEW1.getValue():shader_vertex_textarea.value);
@@ -174,6 +180,13 @@ var main=function() {
 	for (var i=0; i<CODEVIEW2.lineCount(); i++) {
 		CODEVIEW2.indentLine(i);
 	};
+
+
+
+
+
+
+
 
 
 
